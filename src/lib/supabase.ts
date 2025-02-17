@@ -1,9 +1,8 @@
 
 import { createClient } from "@supabase/supabase-js";
 
-// When using Lovable's Supabase integration, these environment variables are automatically injected
-const supabaseUrl = import.meta.env.SUPABASE_URL || "";
-const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY || "";
+const supabaseUrl = "https://tilusjoguxcbqlvanfsq.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpbHVzam9ndXhjYnFsdmFuZnNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MDI2NjcsImV4cCI6MjA1NTI3ODY2N30.jb0srd4tj3F00MldObbF73AY7vvOYbppQSWMFaz4mFg";
 
 // Log the values to help with debugging (these will be visible in the browser console)
 console.log("Supabase URL:", supabaseUrl);
