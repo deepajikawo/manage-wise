@@ -17,19 +17,19 @@ function App() {
       <Router>
         <Routes>
           <Route path="/auth/login" element={<Login />} />
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <Routes>
-                    <Route path="/inventory" element={<Inventory />} />
-                    <Route path="/" element={<Navigate to="/inventory" replace />} />
-                  </Routes>
-                </DashboardLayout>
-              </ProtectedRoute>
-            }
-          />
+          <Route element={
+            <ProtectedRoute>
+              <DashboardLayout>
+                <Routes>
+                  <Route path="/inventory" element={<Inventory />} />
+                  <Route path="/" element={<Navigate to="/inventory" replace />} />
+                </Routes>
+              </DashboardLayout>
+            </ProtectedRoute>
+          }>
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/" element={<Navigate to="/inventory" replace />} />
+          </Route>
         </Routes>
         <Toaster />
       </Router>
