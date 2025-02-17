@@ -21,6 +21,14 @@ const Inventory = () => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
+  const { data: session } = useQuery({
+    queryKey: ["session"],
+    queryFn: async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      return session;
+    },
+  });
+
   const { data: items, isLoading } = useQuery({
     queryKey: ["inventory"],
     queryFn: async () => {
@@ -38,7 +46,7 @@ const Inventory = () => {
     mutationFn: async (newItem: Omit<InventoryItem, "id">) => {
       const { data, error } = await supabase
         .from("inventory_items")
-        .insert([newItem])
+        .insert([{ ...newItem, user_id: session?.user.id }])
         .select()
         .single();
 
