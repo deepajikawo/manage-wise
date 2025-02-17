@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
+import { Smartphone } from "lucide-react";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -44,10 +45,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <Card className="max-w-md w-full space-y-8 p-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-primary/10 py-12 px-4 sm:px-6 lg:px-8">
+      <Card className="max-w-md w-full space-y-8 p-8 shadow-lg">
+        <div className="flex flex-col items-center">
+          <div className="bg-primary/10 p-3 rounded-full">
+            <Smartphone className="w-8 h-8 text-primary" />
+          </div>
+          <h1 className="mt-2 text-2xl font-bold text-gray-900">Austin Phones and Gadgets</h1>
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
             Create an account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
